@@ -1,0 +1,21 @@
+---
+
+thorntail:
+  undertow:
+    instance-id: sms_1
+  ajp:
+    enable: true
+  network:
+    socket-binding-groups:
+      standard-sockets:
+        port-offset: 20
+  datasources:
+    data-sources:
+      alertasDS:
+        driver-name: oracle
+        connection-url: "jdbc:oracle:thin:@10.100.230.10:1535:quality"
+        user-name: sms_user
+        password: qlTsMzuSr
+  jdbc-drivers:
+    oracle:
+       driver-class-name: oracle.jdbc.OracleDriver

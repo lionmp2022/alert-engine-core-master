@@ -1,0 +1,351 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>mensajeria-webServices</groupId>
+	<artifactId>WebServiceMensajeria</artifactId>
+	<packaging>war</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<name>WebServiceMensajeria Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cxf.version>3.2.7</cxf.version>
+		<spring.version>5.1.3.RELEASE</spring.version>
+		<java.version.expected>1.8</java.version.expected>
+		<maven.version.expected>2.2.1</maven.version.expected>
+		<version.thorntail>2.3.0.Final</version.thorntail>
+		<failOnMissingWebXml>false</failOnMissingWebXml>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>javax.xml.ws</groupId>
+			<artifactId>jaxws-api</artifactId>
+			<version>2.2.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-frontend-jaxws</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http</artifactId>
+			<version>${cxf.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>4.1.4.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.3.7.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+	<dependency>
+    		<groupId>com.oracle</groupId>
+		 <artifactId>ojdbc8</artifactId>
+		 <version>12.2.0.1.0</version>
+	</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-email</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.opensmpp</groupId>
+			<artifactId>opensmpp-core</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity-tools</artifactId>
+			<version>2.0</version>
+		</dependency>
+
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+	        	<id>btpcvtsopinf01.grupobmv.com.mx</id>
+        		<name>btpcvtsopinf01.grupobmv.com.mx-releases</name>
+	        	<url>http://10.100.225.72:8020/artifactory/ext-release-local</url>
+		</repository> 
+		<repository>
+			<id>repo1</id>
+			<name>Repositorio principal de maven2</name>
+			<url>http://repo1.maven.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>intranet</id>
+			<name>Repositorio de la intranet</name>
+			<url>http://10.100.225.74/maven2</url>
+		</repository>
+		<repository>
+		        <id>btpcvtsopinf01.grupobmv.com.mx2</id>
+		        <name>btpcvtsopinf01.grupobmv.com.mx-releases</name>
+		        <url>http://10.100.225.72:8020/artifactory/deployment</url>
+		 </repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+                        <id>repo2</id>
+                        <name>Repositorio principal de maven2</name>
+                        <url>http://repo1.maven.org/maven2</url>
+                </pluginRepository>
+	</pluginRepositories>
+
+	<!-- <build> -->
+	<!-- <finalName>WebServiceMensajeria</finalName> -->
+	<!-- </build> -->
+
+	<build>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+				<version>1.3.1</version>
+				<executions>
+					<execution>
+						<id>validar-versiones-jdk-maven</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+
+								<requireJavaVersion>
+									<version>[1.8.0,1.9.0)</version>
+									<message>
+										**************************************************************
+
+
+										ERROR: NO SE COMPILO CON LA VERSION CORRECTA DEL JDK
+										VERSION
+										ESPERADA: ${java.version.expected}
+										VERSION EMPLEADA:
+										${java.runtime.version}
+
+
+										**************************************************************
+									</message>
+								</requireJavaVersion>
+							</rules>
+							<fail>true</fail>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.apache.maven.scm</groupId>
+						<artifactId>maven-scm-provider-gitexe</artifactId>
+						<version>1.8.1</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.2</version>
+				<executions>
+					<execution>
+						<phase>compile</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<tasks>
+								<echo
+									message=" XXXXXXXXXXXXXXXXXXXXXXXXX ${project.build.outputDirectory}  XXXXXXXXXXXXXXXXXXXXXXXXX" />
+
+								<echo
+									message=" XXXXXXXXXXXXXXXXXXXXXXXXX ${project.build.directory}  XXXXXXXXXXXXXXXXXXXXXXXXX" />
+								<echo
+									message=" XXXXXXXXXXXXXXXXXXXXXXXXX  ${project.basedir}  XXXXXXXXXXXXXXXXXXXXXXXXX" />
+
+								<echo
+									message=" XXXXXXXXXXXXXXXXXXXXXXXXX  ${mensajeria.activo.nombre}  XXXXXXXXXXXXXXXXXXXXXXXXX" />
+
+								<!-- ESTA PARTE ES PARA LOS PROFILES -->
+								<delete
+									file="${project.build.outputDirectory}/mensajeria.properties" />
+								<copy
+									file="conf/${mensajeria.activo.nombre}/mensajeria.properties"
+									tofile="${project.build.outputDirectory}/mensajeria.properties" />
+								<copy
+									file="conf/${mensajeria.activo.nombre}/project-defaults.yml"
+									tofile="${project.build.outputDirectory}/project-defaults.yml" />
+							</tasks>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>io.thorntail</groupId>
+				<artifactId>thorntail-maven-plugin</artifactId>
+				<version>${version.thorntail}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>package</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<mensajeria.activo.nombre>local</mensajeria.activo.nombre>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>produccion</id>
+			<properties>
+				<mensajeria.activo.nombre>produccion</mensajeria.activo.nombre>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>quality</id>
+			<properties>
+				<mensajeria.activo.nombre>quality</mensajeria.activo.nombre>
+			</properties>
+		</profile>
+
+	</profiles>
+</project>

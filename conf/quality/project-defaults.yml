@@ -1,0 +1,31 @@
+---
+thorntail:
+  undertow:
+    instance-id: sms_1
+  ajp:
+    enable: true
+  network:
+    socket-binding-groups:
+      standard-sockets:
+        port-offset: 20
+  datasources:
+    data-sources:
+      alertasDS:
+        driver-name: oracle
+        connection-url: "jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.100.230.10)(PORT = 1535))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = quality)))"
+        user-name: sms_user
+        password: qlTsMzuSr
+  jdbc-drivers:
+    oracle:
+      driver-class-name: oracle.jdbc.OracleDriver
+  logging:
+    periodic-rotating-file-handlers:
+      FILE:
+        file:
+          path: ../../mensajeria/logs/alert-engine.log
+        suffix: .yyyy-MM-dd
+        named-formatter: COLOR_PATTERN
+    root-logger:
+      handlers:
+        - CONSOLE
+        - FILE
